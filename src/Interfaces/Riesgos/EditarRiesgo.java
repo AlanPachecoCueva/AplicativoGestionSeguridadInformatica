@@ -1,0 +1,647 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package Interfaces.Riesgos;
+
+import Clases.Activo;
+import Clases.GuardadoDatos;
+import GestionRiesgos.CategoriaAmenaza;
+import GestionRiesgos.Riesgo;
+import GestionRiesgos.Vulnerabilidades;
+import Interfaces.Inicio;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author josue
+ */
+public class EditarRiesgo extends javax.swing.JFrame {
+    Riesgo riesgoEditado;
+    CategoriaAmenaza ca = new CategoriaAmenaza();
+    Activo activoSeleccionado;
+    /**
+     * Creates new form EditarRiesgo
+     */
+    public EditarRiesgo() {
+        initComponents();
+        
+        //tablaRiesgosExistentes
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        
+        ArrayList<Object> columnasModel = new ArrayList<Object>();
+        
+        //Agregar columnas
+        columnasModel.add("Nombre");
+        columnasModel.add("Amenaza");
+        
+        for(Object columna : columnasModel){
+            modeloTabla.addColumn(columna);
+        }
+        
+        
+        //Recuperas riesgos
+        List<Riesgo> riesgosGuardados = GuardadoDatos.getRiesgos();
+        
+        ArrayList<List<String>> riesgosParaMostrar = new ArrayList<List<String>>(); 
+        
+        /*String nombreActivo, TipoDeActivo tipoActivo, Tag tagActivo, ValoracionCorta disponibilidad, ValoracionCorta integridad, ValoracionLarga confidencialidad*/
+        
+        for(Riesgo riesgo : riesgosGuardados){
+            List<String> nuevo = new ArrayList<String>();
+            
+            columnasModel.add("Nombre");
+            columnasModel.add("Amenaza");
+        
+        
+            nuevo.add(riesgo.getNombre());
+            nuevo.add(riesgo.getCategoriaAmenaza().getAmenaza());
+            
+            riesgosParaMostrar.add(nuevo);
+        }
+        
+        for(List<String> lista : riesgosParaMostrar){
+            Object[] ingreso = lista.toArray();
+            
+           modeloTabla.addRow(ingreso);
+        }
+        
+        this.tablaRiesgosExistentes.setModel(modeloTabla);
+        tablaRiesgosExistentes.setAutoCreateRowSorter(true);
+        
+        
+        //Para cargar activos
+        DefaultTableModel modeloTablaActivos = new DefaultTableModel();
+        
+        ArrayList<Object> columnasModelActivos = new ArrayList<Object>();
+        
+        columnasModelActivos.add("Nombre");
+        columnasModelActivos.add("Código Activo");
+        
+        for(Object columna : columnasModelActivos){
+            modeloTablaActivos.addColumn(columna);
+        }
+        
+        
+        
+        List<Activo> activosGuardados = GuardadoDatos.getActivos();
+        
+        ArrayList<List<String>> activosParaMostrar = new ArrayList<List<String>>(); 
+        
+        /*String nombreActivo, TipoDeActivo tipoActivo, Tag tagActivo, ValoracionCorta disponibilidad, ValoracionCorta integridad, ValoracionLarga confidencialidad*/
+        
+        for(Activo activo : activosGuardados){
+            List<String> nuevo = new ArrayList<String>();
+            nuevo.add(activo.getNombreActivo());
+            nuevo.add(activo.getCodigoActivo());
+            
+            
+            activosParaMostrar.add(nuevo);
+        }
+        
+        for(List<String> lista : activosParaMostrar){
+            Object[] ingreso = lista.toArray();
+            
+           modeloTablaActivos.addRow(ingreso);
+        }
+        
+        this.tablaActivos.setModel(modeloTablaActivos);
+        tablaActivos.setAutoCreateRowSorter(true);
+        
+        //Setear combo box
+        for(String categoria : ca.getCategorias()) {
+            comboCategoriaAmenaza.addItem(categoria);
+        }
+        comboCategoriaAmenaza.setSelectedItem("DESASTRES_NATURALES");
+        //Setear amenaza según categoría de amenaza seleccionada
+        
+        //Setear las vulnerabildiades
+        this.comboVulnerabilidad.setModel(new DefaultComboBoxModel(Vulnerabilidades.values()));
+        
+        //Setea el impacto
+        comboImpacto.addItem("Directo");
+        comboImpacto.addItem("Indirecto");
+        
+        //Posibilidad de ocurrir
+        comboPosibilidadOcurrir.addItem("1");
+        comboPosibilidadOcurrir.addItem("2");
+        comboPosibilidadOcurrir.addItem("3");
+        comboPosibilidadOcurrir.addItem("4");
+        comboPosibilidadOcurrir.addItem("5");
+        comboPosibilidadOcurrir.addItem("6");
+        comboPosibilidadOcurrir.addItem("7");
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        btnRegresar = new javax.swing.JButton();
+        labelTitulo1 = new javax.swing.JLabel();
+        labelTitulo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaRiesgosExistentes = new javax.swing.JTable();
+        btnSeleccionar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        txtNombre = new javax.swing.JTextField();
+        labelText = new javax.swing.JLabel();
+        txtDescripcion = new javax.swing.JTextField();
+        labelText1 = new javax.swing.JLabel();
+        labelTag1 = new javax.swing.JLabel();
+        comboCategoriaAmenaza = new javax.swing.JComboBox<>();
+        comboAmenaza = new javax.swing.JComboBox<>();
+        labelTag2 = new javax.swing.JLabel();
+        comboVulnerabilidad = new javax.swing.JComboBox<>();
+        labelTag3 = new javax.swing.JLabel();
+        spinnerNivelAceptacionRiesgo = new javax.swing.JSpinner();
+        labelTag4 = new javax.swing.JLabel();
+        labelTag5 = new javax.swing.JLabel();
+        comboImpacto = new javax.swing.JComboBox<>();
+        labelTag6 = new javax.swing.JLabel();
+        labelTag7 = new javax.swing.JLabel();
+        comboPosibilidadOcurrir = new javax.swing.JComboBox<>();
+        labelTitulo2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaActivos = new javax.swing.JTable();
+        btnSeleccionarActivo = new javax.swing.JButton();
+        spinnerNivelRiesgo = new javax.swing.JSpinner();
+        labelTag8 = new javax.swing.JLabel();
+        txtActivo = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(855, 642));
+        setSize(new java.awt.Dimension(855, 642));
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/atras.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
+        labelTitulo1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelTitulo1.setText("Editar Riesgo");
+
+        labelTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelTitulo.setText("Existentes");
+
+        tablaRiesgosExistentes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2"
+            }
+        ));
+        tablaRiesgosExistentes.setMinimumSize(new java.awt.Dimension(921, 565));
+        tablaRiesgosExistentes.setPreferredSize(new java.awt.Dimension(921, 565));
+        jScrollPane1.setViewportView(tablaRiesgosExistentes);
+
+        btnSeleccionar.setText("Seleccionar");
+        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarActionPerformed(evt);
+            }
+        });
+
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
+        labelText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelText.setText("Nombre:");
+
+        labelText1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelText1.setText("Descripción:");
+
+        labelTag1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag1.setText("Categoría Amenaza:");
+
+        comboCategoriaAmenaza.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCategoriaAmenazaItemStateChanged(evt);
+            }
+        });
+
+        labelTag2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag2.setText("Amenaza:");
+
+        labelTag3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag3.setText("Vulnerabilidad:");
+
+        labelTag4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag4.setText("Nivel Aceptación Del Riesgo:");
+
+        labelTag5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag5.setText("Nivel Del Riesgo:");
+
+        labelTag6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag6.setText("Impacto:");
+
+        labelTag7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag7.setText("Posibilidad De Ocurrir:");
+
+        labelTitulo2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelTitulo2.setText("Selecciona Activo");
+
+        tablaActivos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2"
+            }
+        ));
+        tablaActivos.setMinimumSize(new java.awt.Dimension(921, 565));
+        tablaActivos.setPreferredSize(new java.awt.Dimension(921, 565));
+        jScrollPane2.setViewportView(tablaActivos);
+
+        btnSeleccionarActivo.setText("SELECCIONAR");
+        btnSeleccionarActivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarActivoActionPerformed(evt);
+            }
+        });
+
+        labelTag8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTag8.setText("Activo:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
+                .addComponent(labelTitulo1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelTitulo)
+                .addGap(129, 129, 129))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(labelTitulo2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSeleccionarActivo)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelTag2)
+                                .addGap(37, 37, 37)
+                                .addComponent(comboAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelTag1)
+                                .addGap(37, 37, 37)
+                                .addComponent(comboCategoriaAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelTag6)
+                                .addGap(37, 37, 37)
+                                .addComponent(comboImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelTag4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTag3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTag5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(spinnerNivelRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboVulnerabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spinnerNivelAceptacionRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 4, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(labelText)
+                                .addGap(31, 31, 31)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(labelText1)
+                                .addGap(31, 31, 31)
+                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTag8)
+                                    .addComponent(labelTag7))
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comboPosibilidadOcurrir, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegresar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelText)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelText1)
+                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTag1)
+                            .addComponent(comboCategoriaAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTag2)
+                            .addComponent(comboAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTag3)
+                            .addComponent(comboVulnerabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelTag4)
+                            .addComponent(spinnerNivelAceptacionRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelTag5)
+                            .addComponent(spinnerNivelRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTag6)
+                            .addComponent(comboImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTag7)
+                            .addComponent(comboPosibilidadOcurrir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelTag8)
+                    .addComponent(txtActivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(btnSeleccionarActivo)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        Inicio inicio = new Inicio();
+
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
+
+        if(this.tablaRiesgosExistentes.getSelectedRow() > -1){
+            String nombreRiesgo;
+            DefaultTableModel tm = (DefaultTableModel) tablaRiesgosExistentes.getModel();
+            nombreRiesgo = (String) tm.getValueAt(tablaRiesgosExistentes.getSelectedRow(),0);
+
+            riesgoEditado = GuardadoDatos.buscarRiesgoPorNombre(nombreRiesgo);
+
+            
+            System.out.println("Riesgo encontrado: "+ riesgoEditado.toString());
+
+
+            txtNombre.setText(riesgoEditado.getNombre());
+            txtDescripcion.setText(riesgoEditado.getDescripcion());
+            
+            //Posible error
+            comboCategoriaAmenaza.setSelectedItem(riesgoEditado.getCategoriaAmenaza().getCategoriaAmenaza());
+            
+            //x2
+            comboAmenaza.setSelectedItem(riesgoEditado.getCategoriaAmenaza().getAmenaza());
+            
+            comboVulnerabilidad.setSelectedItem(riesgoEditado.getVulnerabilidad());
+            //x3
+            spinnerNivelAceptacionRiesgo.setValue(riesgoEditado.getNivelAceptableDeRiesgo());
+            spinnerNivelRiesgo.setValue(riesgoEditado.getNivelDeRiesgo());
+            
+            comboImpacto.setSelectedItem(riesgoEditado.getImpacto());
+            
+            comboPosibilidadOcurrir.setSelectedIndex(riesgoEditado.getPosibilidadDeOCurrir()-1);
+            
+            txtActivo.setText(riesgoEditado.getActivoEnRiesgo().getNombreActivo());
+            
+            
+            
+        }
+
+    }//GEN-LAST:event_btnSeleccionarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        //String nombreAnterior = this.riesgoEditado.getNombre();
+        //nombreActivo
+        this.riesgoEditado.setNombre(this.txtNombre.getText());
+        
+        this.riesgoEditado.setDescripcion(this.txtDescripcion.getText());
+        this.riesgoEditado.getCategoriaAmenaza().setCategoriaAmenaza(this.comboCategoriaAmenaza.getSelectedItem().toString());
+        this.riesgoEditado.getCategoriaAmenaza().setAmenaza(this.comboAmenaza.getSelectedItem().toString());
+        this.riesgoEditado.setVulnerabilidad(Vulnerabilidades.valueOf(this.comboVulnerabilidad.getSelectedItem().toString()));
+        this.riesgoEditado.setNivelAceptableDeRiesgo(Integer.parseInt(this.spinnerNivelAceptacionRiesgo.getValue().toString()));
+        this.riesgoEditado.setNivelDeRiesgo(Integer.parseInt(this.spinnerNivelRiesgo.getValue().toString()));
+        this.riesgoEditado.setImpacto(this.comboImpacto.getSelectedItem().toString());
+        this.riesgoEditado.setPosibilidadDeOCurrir(Integer.parseInt(this.comboPosibilidadOcurrir.getSelectedItem().toString()));
+        this.riesgoEditado.setActivoEnRiesgo(activoSeleccionado);
+        
+        //Buscamos el original
+        //System.out.println("Nombre Anterior: "+nombreAnterior);
+        Riesgo riesgoCambiado = GuardadoDatos.buscarRiesgoPorNombre(riesgoEditado.getNombre());
+        //Guardamos el riesgo modificado
+        //System.out.println("Riesgo: "+riesgoACambiar.toString());
+        
+        if(riesgoCambiado != null){
+            String mensaje = "Riesgo modificado Correctamente: Nombre:"+riesgoCambiado.getNombre();
+            JOptionPane.showMessageDialog(null, mensaje);
+        }else{
+            JOptionPane.showMessageDialog(null, "No se modificó el riesgo correctamente");
+        }
+        
+        //Cerrar ventana
+        Inicio inicio = new Inicio();
+        
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        Inicio inicio = new Inicio();
+
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void comboCategoriaAmenazaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCategoriaAmenazaItemStateChanged
+        if(comboCategoriaAmenaza.getSelectedItem() != null){
+            comboAmenaza.removeAllItems();
+            String categoriaAmenaza = comboCategoriaAmenaza.getSelectedItem().toString();
+
+            for(String amenaza : ca.devolverAmenazasSegunCategoria(categoriaAmenaza)) {
+
+                comboAmenaza.addItem(amenaza);
+            }
+        }
+    }//GEN-LAST:event_comboCategoriaAmenazaItemStateChanged
+
+    private void btnSeleccionarActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActivoActionPerformed
+
+        if(this.tablaActivos.getSelectedRow() > -1){
+            DefaultTableModel tm = (DefaultTableModel) tablaActivos.getModel();
+            String codigo = (String) tm.getValueAt(tablaActivos.getSelectedRow(),1);
+
+            activoSeleccionado = GuardadoDatos.buscarActivoPorCodigo(codigo);
+
+            System.out.println("Activo encontrado: "+ activoSeleccionado.toString());
+
+            System.out.println("Codigo seleccionado: "+codigo);
+
+            if(activoSeleccionado != null){
+                JOptionPane.showMessageDialog(null, "El activo se seleccionó correctamente");
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudo seleccionar el activo, algo falló...");
+            }
+
+        }
+
+    }//GEN-LAST:event_btnSeleccionarActivoActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(EditarRiesgo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(EditarRiesgo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(EditarRiesgo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(EditarRiesgo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new EditarRiesgo().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSeleccionar;
+    private javax.swing.JButton btnSeleccionarActivo;
+    private javax.swing.JComboBox<String> comboAmenaza;
+    private javax.swing.JComboBox<String> comboCategoriaAmenaza;
+    private javax.swing.JComboBox<String> comboImpacto;
+    private javax.swing.JComboBox<String> comboPosibilidadOcurrir;
+    private javax.swing.JComboBox<String> comboVulnerabilidad;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel labelTag1;
+    private javax.swing.JLabel labelTag2;
+    private javax.swing.JLabel labelTag3;
+    private javax.swing.JLabel labelTag4;
+    private javax.swing.JLabel labelTag5;
+    private javax.swing.JLabel labelTag6;
+    private javax.swing.JLabel labelTag7;
+    private javax.swing.JLabel labelTag8;
+    private javax.swing.JLabel labelText;
+    private javax.swing.JLabel labelText1;
+    private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel labelTitulo1;
+    private javax.swing.JLabel labelTitulo2;
+    private javax.swing.JSpinner spinnerNivelAceptacionRiesgo;
+    private javax.swing.JSpinner spinnerNivelRiesgo;
+    private javax.swing.JTable tablaActivos;
+    private javax.swing.JTable tablaRiesgosExistentes;
+    private javax.swing.JTextField txtActivo;
+    private javax.swing.JTextField txtDescripcion;
+    private javax.swing.JTextField txtNombre;
+    // End of variables declaration//GEN-END:variables
+}
