@@ -29,7 +29,11 @@ public class EditarRiesgo extends javax.swing.JFrame {
      */
     public EditarRiesgo() {
         initComponents();
+        actualizarTablas();
         
+    }
+
+    private void actualizarTablas(){
         //tablaRiesgosExistentes
         DefaultTableModel modeloTabla = new DefaultTableModel();
         
@@ -135,7 +139,6 @@ public class EditarRiesgo extends javax.swing.JFrame {
         comboPosibilidadOcurrir.addItem("6");
         comboPosibilidadOcurrir.addItem("7");
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -145,6 +148,7 @@ public class EditarRiesgo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         labelTitulo1 = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
@@ -182,18 +186,24 @@ public class EditarRiesgo extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(855, 642));
         setSize(new java.awt.Dimension(855, 642));
 
+        jPanel1.setBackground(new java.awt.Color(189, 221, 211));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/atras.png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 46, -1));
 
         labelTitulo1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo1.setText("Editar Riesgo");
+        jPanel1.add(labelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, 24));
 
         labelTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo.setText("Existentes");
+        jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(607, 30, -1, 24));
 
         tablaRiesgosExistentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -210,12 +220,15 @@ public class EditarRiesgo extends javax.swing.JFrame {
         tablaRiesgosExistentes.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane1.setViewportView(tablaRiesgosExistentes);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 88, 300, 350));
+
         btnSeleccionar.setText("Seleccionar");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(638, 444, 100, 30));
 
         btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -223,6 +236,7 @@ public class EditarRiesgo extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 555, 100, 40));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -230,42 +244,65 @@ public class EditarRiesgo extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 555, 100, 40));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 66, 250, -1));
 
         labelText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText.setText("Nombre:");
+        jPanel1.add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 66, -1, -1));
+        jPanel1.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 102, 250, -1));
 
         labelText1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText1.setText("Descripción:");
+        jPanel1.add(labelText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 102, -1, -1));
 
         labelTag1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag1.setText("Categoría Amenaza:");
+        jPanel1.add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 138, -1, -1));
 
         comboCategoriaAmenaza.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboCategoriaAmenazaItemStateChanged(evt);
             }
         });
+        jPanel1.add(comboCategoriaAmenaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 138, 246, -1));
+
+        jPanel1.add(comboAmenaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 192, 246, -1));
 
         labelTag2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag2.setText("Amenaza:");
+        jPanel1.add(labelTag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 192, -1, -1));
+
+        jPanel1.add(comboVulnerabilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 244, 246, -1));
 
         labelTag3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag3.setText("Vulnerabilidad:");
+        jPanel1.add(labelTag3, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 244, -1, -1));
+        jPanel1.add(spinnerNivelAceptacionRiesgo, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 297, 65, -1));
 
         labelTag4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag4.setText("Nivel Aceptación Del Riesgo:");
+        jPanel1.add(labelTag4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
 
         labelTag5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag5.setText("Nivel Del Riesgo:");
+        jPanel1.add(labelTag5, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 344, -1, -1));
+
+        jPanel1.add(comboImpacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 385, 246, -1));
 
         labelTag6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag6.setText("Impacto:");
+        jPanel1.add(labelTag6, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 385, -1, -1));
 
         labelTag7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag7.setText("Posibilidad De Ocurrir:");
+        jPanel1.add(labelTag7, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 429, -1, -1));
+
+        jPanel1.add(comboPosibilidadOcurrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 429, 246, -1));
 
         labelTitulo2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo2.setText("Selecciona Activo");
+        jPanel1.add(labelTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 516, -1, 24));
 
         tablaActivos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -282,172 +319,33 @@ public class EditarRiesgo extends javax.swing.JFrame {
         tablaActivos.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane2.setViewportView(tablaActivos);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 552, 271, 84));
+
         btnSeleccionarActivo.setText("SELECCIONAR");
         btnSeleccionarActivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarActivoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSeleccionarActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 564, -1, -1));
+        jPanel1.add(spinnerNivelRiesgo, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 341, 65, -1));
 
         labelTag8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag8.setText("Activo:");
+        jPanel1.add(labelTag8, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 485, -1, -1));
+
+        txtActivo.setEditable(false);
+        jPanel1.add(txtActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 480, 250, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
-                .addComponent(labelTitulo1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelTitulo)
-                .addGap(129, 129, 129))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(labelTitulo2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSeleccionarActivo)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTag2)
-                                .addGap(37, 37, 37)
-                                .addComponent(comboAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTag1)
-                                .addGap(37, 37, 37)
-                                .addComponent(comboCategoriaAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTag6)
-                                .addGap(37, 37, 37)
-                                .addComponent(comboImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelTag4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelTag3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelTag5, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(spinnerNivelRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(comboVulnerabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(spinnerNivelAceptacionRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 4, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelText)
-                                .addGap(31, 31, 31)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelText1)
-                                .addGap(31, 31, 31)
-                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelTag8)
-                                    .addComponent(labelTag7))
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(comboPosibilidadOcurrir, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(117, 117, 117))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnRegresar))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelText)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelText1)
-                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag1)
-                            .addComponent(comboCategoriaAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag2)
-                            .addComponent(comboAmenaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag3)
-                            .addComponent(comboVulnerabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelTag4)
-                            .addComponent(spinnerNivelAceptacionRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelTag5)
-                            .addComponent(spinnerNivelRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag6)
-                            .addComponent(comboImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag7)
-                            .addComponent(comboPosibilidadOcurrir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelTag8)
-                    .addComponent(txtActivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(btnSeleccionarActivo)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -500,38 +398,71 @@ public class EditarRiesgo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        //String nombreAnterior = this.riesgoEditado.getNombre();
-        //nombreActivo
-        this.riesgoEditado.setNombre(this.txtNombre.getText());
-        
-        this.riesgoEditado.setDescripcion(this.txtDescripcion.getText());
-        this.riesgoEditado.getCategoriaAmenaza().setCategoriaAmenaza(this.comboCategoriaAmenaza.getSelectedItem().toString());
-        this.riesgoEditado.getCategoriaAmenaza().setAmenaza(this.comboAmenaza.getSelectedItem().toString());
-        this.riesgoEditado.setVulnerabilidad(Vulnerabilidades.valueOf(this.comboVulnerabilidad.getSelectedItem().toString()));
-        this.riesgoEditado.setNivelAceptableDeRiesgo(Integer.parseInt(this.spinnerNivelAceptacionRiesgo.getValue().toString()));
-        this.riesgoEditado.setNivelDeRiesgo(Integer.parseInt(this.spinnerNivelRiesgo.getValue().toString()));
-        this.riesgoEditado.setImpacto(this.comboImpacto.getSelectedItem().toString());
-        this.riesgoEditado.setPosibilidadDeOCurrir(Integer.parseInt(this.comboPosibilidadOcurrir.getSelectedItem().toString()));
-        this.riesgoEditado.setActivoEnRiesgo(activoSeleccionado);
-        
-        //Buscamos el original
-        //System.out.println("Nombre Anterior: "+nombreAnterior);
-        Riesgo riesgoCambiado = GuardadoDatos.buscarRiesgoPorNombre(riesgoEditado.getNombre());
-        //Guardamos el riesgo modificado
-        //System.out.println("Riesgo: "+riesgoACambiar.toString());
-        
-        if(riesgoCambiado != null){
-            String mensaje = "Riesgo modificado Correctamente: Nombre:"+riesgoCambiado.getNombre();
-            JOptionPane.showMessageDialog(null, mensaje);
+        //Si el nombre está vacío
+        if(!txtNombre.getText().isEmpty() && !txtDescripcion.getText().isEmpty() && !txtNombre.getText().isBlank() && !txtDescripcion.getText().isBlank()){
+            if(Integer.parseInt(spinnerNivelAceptacionRiesgo.getValue().toString()) >= 0 && Integer.parseInt(spinnerNivelAceptacionRiesgo.getValue().toString()) <= 10 ){
+                //Si el nivel de riesgo no está en el rango de 0-10
+                if(Integer.parseInt(spinnerNivelRiesgo.getValue().toString()) >= 0 && Integer.parseInt(spinnerNivelAceptacionRiesgo.getValue().toString()) <= 10 ){
+                    //Validar si se ha seleccionado un activo
+                    if(riesgoEditado != null){
+                        //String nombreAnterior = this.riesgoEditado.getNombre();
+                        //nombreActivo
+                        this.riesgoEditado.setNombre(this.txtNombre.getText());
+
+                        this.riesgoEditado.setDescripcion(this.txtDescripcion.getText());
+                        this.riesgoEditado.getCategoriaAmenaza().setCategoriaAmenaza(this.comboCategoriaAmenaza.getSelectedItem().toString());
+                        this.riesgoEditado.getCategoriaAmenaza().setAmenaza(this.comboAmenaza.getSelectedItem().toString());
+                        this.riesgoEditado.setVulnerabilidad(Vulnerabilidades.valueOf(this.comboVulnerabilidad.getSelectedItem().toString()));
+                        this.riesgoEditado.setNivelAceptableDeRiesgo(Integer.parseInt(this.spinnerNivelAceptacionRiesgo.getValue().toString()));
+                        this.riesgoEditado.setNivelDeRiesgo(Integer.parseInt(this.spinnerNivelRiesgo.getValue().toString()));
+                        this.riesgoEditado.setImpacto(this.comboImpacto.getSelectedItem().toString());
+                        this.riesgoEditado.setPosibilidadDeOCurrir(Integer.parseInt(this.comboPosibilidadOcurrir.getSelectedItem().toString()));
+                        
+                        //Comprobar si el activo en riesgo ha sido seleccionado
+                        
+                        if(activoSeleccionado != null){
+                            //Si ha sido seleccionado
+                            this.riesgoEditado.setActivoEnRiesgo(activoSeleccionado);
+                        }else{
+                            //Si no ha sido seleccionado ponemos elque tenía orginalmente
+                            this.riesgoEditado.setActivoEnRiesgo(riesgoEditado.getActivoEnRiesgo());
+                        }
+                        
+
+                        //Buscamos el original
+                        //System.out.println("Nombre Anterior: "+nombreAnterior);
+                        Riesgo riesgoCambiado = GuardadoDatos.buscarRiesgoPorNombre(riesgoEditado.getNombre());
+                        //Guardamos el riesgo modificado
+                        //System.out.println("Riesgo: "+riesgoACambiar.toString());
+
+                        if(riesgoCambiado != null){
+                            String mensaje = "Riesgo modificado Correctamente: Nombre:"+riesgoCambiado.getNombre();
+                            JOptionPane.showMessageDialog(null, mensaje);
+                            actualizarTablas();
+                        }else{
+                            JOptionPane.showMessageDialog(null, "No se modificó el riesgo correctamente");
+                        }
+
+                        //Cerrar ventana
+                        Inicio inicio = new Inicio();
+
+                        inicio.setVisible(true);
+                        this.dispose();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Debes seleccionar un riesgo");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "El nivel de riesgo debe ser entre 0 y 10");
+                }
+            }else{
+               JOptionPane.showMessageDialog(null, "El nivel de riesgo aceptado debe ser entre 0 y 10");
+            }
         }else{
-            JOptionPane.showMessageDialog(null, "No se modificó el riesgo correctamente");
+            JOptionPane.showMessageDialog(null, "Debes ingresar un nombre y una descripción de riesgo.");
         }
         
-        //Cerrar ventana
-        Inicio inicio = new Inicio();
         
-        inicio.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -621,6 +552,7 @@ public class EditarRiesgo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboImpacto;
     private javax.swing.JComboBox<String> comboPosibilidadOcurrir;
     private javax.swing.JComboBox<String> comboVulnerabilidad;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelTag1;

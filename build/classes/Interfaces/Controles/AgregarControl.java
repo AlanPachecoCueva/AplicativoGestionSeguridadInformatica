@@ -79,6 +79,7 @@ public class AgregarControl extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -103,15 +104,20 @@ public class AgregarControl extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(828, 549));
         setSize(new java.awt.Dimension(828, 549));
 
+        jPanel1.setBackground(new java.awt.Color(189, 221, 211));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/atras.png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 14, 46, -1));
 
         labelTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo.setText("Nuevo Control");
+        jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 25, -1, 24));
 
         tablaRiesgos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,6 +134,8 @@ public class AgregarControl extends javax.swing.JFrame {
         tablaRiesgos.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane1.setViewportView(tablaRiesgos);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 108, 271, 162));
+
         tablaRiesgosSeleccionados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -143,8 +151,11 @@ public class AgregarControl extends javax.swing.JFrame {
         tablaRiesgosSeleccionados.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane2.setViewportView(tablaRiesgosSeleccionados);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 366, 271, 162));
+
         labelTitulo1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo1.setText("Riesgos Agregados");
+        jPanel1.add(labelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 326, -1, -1));
 
         btnSeleccionar.setText("AGREGAR");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
@@ -152,21 +163,32 @@ public class AgregarControl extends javax.swing.JFrame {
                 btnSeleccionarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 288, -1, -1));
 
         labelTitulo2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo2.setText("Riesgos");
+        jPanel1.add(labelTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 72, -1, 24));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 108, 250, -1));
 
         labelText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText.setText("Nombre:");
+        jPanel1.add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
+        jPanel1.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 150, 250, -1));
 
         labelText1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText1.setText("Descripción:");
+        jPanel1.add(labelText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 152, -1, -1));
+
+        jPanel1.add(comboTipoControl, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 192, 246, -1));
 
         labelTag1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag1.setText("Tipo De Control:");
+        jPanel1.add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 192, -1, -1));
 
         labelTag2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag2.setText("Eficacia:");
+        jPanel1.add(labelTag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 236, -1, -1));
+        jPanel1.add(spinnerEficacia, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 236, 246, -1));
 
         btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +196,7 @@ public class AgregarControl extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 411, 100, 40));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -181,107 +204,17 @@ public class AgregarControl extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 411, 100, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(246, 246, 246)
-                        .addComponent(labelTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(167, 167, 167)
-                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(85, 85, 85)
-                                .addComponent(btnSeleccionar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(69, 69, 69)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelText)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelText1)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(labelTag1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(labelTag2, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(37, 37, 37)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(comboTipoControl, 0, 246, Short.MAX_VALUE)
-                                            .addComponent(spinnerEficacia)))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(labelTitulo2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(labelTitulo1)))
-                .addContainerGap(62, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnRegresar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addComponent(labelTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(labelText))
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(labelText1))
-                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag1)
-                            .addComponent(comboTipoControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag2)
-                            .addComponent(spinnerEficacia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(btnSeleccionar)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelTitulo1)
-                        .addGap(8, 8, 8)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(44, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -366,46 +299,57 @@ public class AgregarControl extends javax.swing.JFrame {
     }
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        //Si el nombre está vacío
+        if(!txtNombre.getText().isEmpty() && !txtDescripcion.getText().isEmpty() && !txtNombre.getText().isBlank() && !txtDescripcion.getText().isBlank()){
+            //Si el nivel de eficacia no está en el rango de 0-10
+            if(Integer.parseInt(spinnerEficacia.getValue().toString()) >= 0 && Integer.parseInt(spinnerEficacia.getValue().toString()) <= 10 ){
+                
+                    String nombre = this.txtNombre.getText();
+                    String descripcion = this.txtDescripcion.getText();
+                    String tipoControl = this.comboTipoControl.getSelectedItem().toString();
+                    float eficacia = Float.parseFloat(String.valueOf(this.spinnerEficacia.getValue()));
 
-        String nombre = this.txtNombre.getText();
-        String descripcion = this.txtDescripcion.getText();
-        String tipoControl = this.comboTipoControl.getSelectedItem().toString();
-        float eficacia = Float.parseFloat(String.valueOf(this.spinnerEficacia.getValue()));
-        
 
-        //Creamos el nuevo control
-        Control nuevoControl = new Control(nombre, descripcion, TipoControl.valueOf(tipoControl), eficacia);
+                    //Creamos el nuevo control
+                    Control nuevoControl = new Control(nombre, descripcion, TipoControl.valueOf(tipoControl), eficacia);
 
-        if(nuevoControl != null){
-            
-            //Corroboramos que haya al menos un riesgo seleccionado
-            if(!riesgosGuardados.isEmpty()){
-                //Agregamos los riesgos seleccionados
-                for(Riesgo riesgo : riesgosGuardados){
-                    //añadimos cada riesgo
-                    nuevoControl.agregarRiesgo(riesgo);
-                }
+                    if(nuevoControl != null){
 
-                //Guardamos los controles a la clase que almacena los datos
-                if(GuardadoDatos.agregarControl(nuevoControl)){
-                    //Si se guardó correctamente
-                    String mensaje = "Control guardado correctamente: Nombre:"+nuevoControl.getNombre()+" Tipo: "+nuevoControl.getTipoControl().toString();
+                        //Corroboramos que haya al menos un riesgo seleccionado
+                        if(!riesgosGuardados.isEmpty()){
+                            //Agregamos los riesgos seleccionados
+                            for(Riesgo riesgo : riesgosGuardados){
+                                //añadimos cada riesgo
+                                nuevoControl.agregarRiesgo(riesgo);
+                            }
 
-                    JOptionPane.showMessageDialog(null, mensaje);
-                }else{
-                    JOptionPane.showMessageDialog(null, "No se guardó el control correctamente.");
-                }
+                            //Guardamos los controles a la clase que almacena los datos
+                            if(GuardadoDatos.agregarControl(nuevoControl)){
+                                //Si se guardó correctamente
+                                String mensaje = "Control guardado correctamente: Nombre:"+nuevoControl.getNombre()+" Tipo: "+nuevoControl.getTipoControl().toString();
 
-                //Cerrar ventana
-                Inicio inicio = new Inicio();
+                                JOptionPane.showMessageDialog(null, mensaje);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "No se guardó el control correctamente.");
+                            }
 
-                inicio.setVisible(true);
-                this.dispose();
+                            //Cerrar ventana
+                            Inicio inicio = new Inicio();
+
+                            inicio.setVisible(true);
+                            this.dispose();
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Debe seleccionar almenos un riesgo. No se guarda la información.");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "El nuevo control no se generó correctamente");
+                    }
             }else{
-                JOptionPane.showMessageDialog(null, "Debe seleccionar almenos un riesgo. No se guarda la información.");
+                JOptionPane.showMessageDialog(null, "El nivel de eficacia debe estar entre 0 y 10.");
             }
+            
         }else{
-            JOptionPane.showMessageDialog(null, "El nuevo control no se generó correctamente");
+            JOptionPane.showMessageDialog(null, "Debes ingresar un nombre y una descripción de riesgo.");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -457,6 +401,7 @@ public class AgregarControl extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSeleccionar;
     private javax.swing.JComboBox<String> comboTipoControl;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelTag1;

@@ -12,14 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Editar.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Controles/AgregarControl.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Riesgos/ListarRiesgos.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Controles/EditarControl.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/GestionRiesgos/Control.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Controles/ListarControles.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Riesgos/EditarRiesgo.java</file>
-            <file>file:/C:/Users/josue/OneDrive%20-%20Universidad%20de%20Las%20Américas/U/6.%20Sexto%20Semestre/4.%20Seguridad%20Informática/AplicativoValoracionActivos/AplicativoValoracionActivos/src/Interfaces/Inicio.java</file>
+            <file>file:/C:/Users/josue/Desktop/AplicativoValoracionActivos/src/Interfaces/Riesgos/AgregarRiesgo.java</file>
+            <file>file:/C:/Users/josue/Desktop/AplicativoValoracionActivos/src/Interfaces/Controles/AgregarControl.java</file>
+            <file>file:/C:/Users/josue/Desktop/AplicativoValoracionActivos/src/Interfaces/Riesgos/EditarRiesgo.java</file>
+            <file>file:/C:/Users/josue/Desktop/AplicativoValoracionActivos/src/Interfaces/Controles/EditarControl.java</file>
+            <file>file:/C:/Users/josue/Desktop/AplicativoValoracionActivos/src/Interfaces/Agregar.java</file>
+            <file>file:/C:/Users/josue/Desktop/AplicativoValoracionActivos/src/Interfaces/Editar.java</file>
         </group>
     </open-files>
 </project-private>

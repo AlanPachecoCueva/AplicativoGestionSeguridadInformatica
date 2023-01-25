@@ -54,6 +54,7 @@ public class Agregar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
         labelText = new javax.swing.JLabel();
@@ -73,10 +74,13 @@ public class Agregar extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(760, 540));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(189, 221, 211));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/atras.png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,20 +88,20 @@ public class Agregar extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 46, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 46, -1));
 
         labelTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo.setText("Nuevo Activo");
-        getContentPane().add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 30, -1, 24));
+        jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 30, -1, 24));
 
         labelText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText.setText("Nombre:");
-        getContentPane().add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 93, -1, -1));
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 91, 250, -1));
+        jPanel1.add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 93, -1, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 91, 250, -1));
 
         labelDisponibilidad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelDisponibilidad.setText("Disponibilidad:");
-        getContentPane().add(labelDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
+        jPanel1.add(labelDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
 
         comboDisponibilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboDisponibilidad.addActionListener(new java.awt.event.ActionListener() {
@@ -105,41 +109,41 @@ public class Agregar extends javax.swing.JFrame {
                 comboDisponibilidadActionPerformed(evt);
             }
         });
-        getContentPane().add(comboDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 246, -1));
+        jPanel1.add(comboDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 246, -1));
 
         labelTag.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag.setText("Tag:");
-        getContentPane().add(labelTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+        jPanel1.add(labelTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         comboTagType.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboTagTypeItemStateChanged(evt);
             }
         });
-        getContentPane().add(comboTagType, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 246, -1));
+        jPanel1.add(comboTagType, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 246, -1));
 
         labelIntegridad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelIntegridad.setText("Integridad:");
-        getContentPane().add(labelIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
+        jPanel1.add(labelIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
 
         comboIntegridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(comboIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 246, -1));
+        jPanel1.add(comboIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 246, -1));
 
         labelConfidencialidad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelConfidencialidad.setText("Confidencialidad:");
-        getContentPane().add(labelConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
+        jPanel1.add(labelConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
 
         comboConfidencialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(comboConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 246, -1));
+        jPanel1.add(comboConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 246, -1));
 
         labelTag1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag1.setText("Tipo:");
-        getContentPane().add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
+        jPanel1.add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 246, -1));
+        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 246, -1));
 
-        getContentPane().add(comboTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 246, -1));
+        jPanel1.add(comboTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 246, -1));
 
         btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +151,7 @@ public class Agregar extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 100, 40));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 100, 40));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +159,18 @@ public class Agregar extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 100, 40));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 100, 40));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,45 +183,49 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_comboTagTypeItemStateChanged
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-       
-        //nombreActivo
-        String nombre = this.txtNombre.getText();
-        
-        //TipoDeactivo
-        TipoDeActivo tipoAct = (TipoDeActivo)this.comboTipo.getSelectedItem();
-        
-        String selectedTag = comboTag.getSelectedItem().toString();
-        
-        Tag tagActivo = new Tag();
-        
-        //TagActivo
-        tagActivo.setTag(comboTagType.getSelectedItem().toString(), selectedTag);
-        
-        ValoracionLarga disponibilidad = (ValoracionLarga) comboDisponibilidad.getSelectedItem();
-        
-        //Integridad
-        ValoracionIntegtridad integridad = (ValoracionIntegtridad) comboIntegridad.getSelectedItem();
-        
-        //Confidencialidad
-        ValoracionCorta confidencialidad = (ValoracionCorta) comboConfidencialidad.getSelectedItem();
-        
-        //Se crea el nuevo activo
-        Activo nuevoActivo = new Activo(nombre, tipoAct, tagActivo, disponibilidad, integridad, confidencialidad);
-        
-        if(GuardadoDatos.agregarActivo(nuevoActivo)){
-            String mensaje = "Guardado Correctamente: Nombre:"+nuevoActivo.getNombreActivo()+" Código: "+nuevoActivo.getCodigoActivo();
-            
-            JOptionPane.showMessageDialog(null, mensaje);
+
+        //validaciones
+        if(!txtNombre.getText().isEmpty()){
+            //nombreActivo
+            String nombre = this.txtNombre.getText();
+
+            //TipoDeactivo
+            TipoDeActivo tipoAct = (TipoDeActivo)this.comboTipo.getSelectedItem();
+
+            String selectedTag = comboTag.getSelectedItem().toString();
+
+            Tag tagActivo = new Tag();
+
+            //TagActivo
+            tagActivo.setTag(comboTagType.getSelectedItem().toString(), selectedTag);
+
+            ValoracionLarga disponibilidad = (ValoracionLarga) comboDisponibilidad.getSelectedItem();
+
+            //Integridad
+            ValoracionIntegtridad integridad = (ValoracionIntegtridad) comboIntegridad.getSelectedItem();
+
+            //Confidencialidad
+            ValoracionCorta confidencialidad = (ValoracionCorta) comboConfidencialidad.getSelectedItem();
+
+            //Se crea el nuevo activo
+            Activo nuevoActivo = new Activo(nombre, tipoAct, tagActivo, disponibilidad, integridad, confidencialidad);
+
+            if(GuardadoDatos.agregarActivo(nuevoActivo)){
+                String mensaje = "Guardado Correctamente: Nombre:"+nuevoActivo.getNombreActivo()+" Código: "+nuevoActivo.getCodigoActivo();
+
+                JOptionPane.showMessageDialog(null, mensaje);
+            }else{
+                JOptionPane.showMessageDialog(null, "No se guardó el activo correctamente");
+            }
+
+            //Cerrar ventana
+            Inicio inicio = new Inicio();
+
+            inicio.setVisible(true);
+            this.dispose();
         }else{
-            JOptionPane.showMessageDialog(null, "No se guardó el activo correctamente");
+            JOptionPane.showMessageDialog(null, "Debes ingresar un nombre de activo.");
         }
-        
-        //Cerrar ventana
-        Inicio inicio = new Inicio();
-        
-        inicio.setVisible(true);
-        this.dispose();
-        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -295,6 +314,7 @@ public class Agregar extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboTag;
     private javax.swing.JComboBox<String> comboTagType;
     private javax.swing.JComboBox<String> comboTipo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelConfidencialidad;
     private javax.swing.JLabel labelDisponibilidad;
     private javax.swing.JLabel labelIntegridad;

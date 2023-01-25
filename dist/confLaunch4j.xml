@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\josue\Desktop\AplicativoValoracionActivos\dist\AplicativoValoracionActivos.jar</jar>
-  <outfile>C:\Users\josue\Desktop\AplicativoValoracionActivos\AplicativoGestion.exe</outfile>
+  <outfile>C:\Users\josue\Desktop\AplicativoValoracionActivos\dist\AplicativoValoraciónDeActivos.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>

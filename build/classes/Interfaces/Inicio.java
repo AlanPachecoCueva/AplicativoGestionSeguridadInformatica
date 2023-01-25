@@ -43,11 +43,22 @@ public class Inicio extends javax.swing.JFrame {
         btnAgregarControl = new javax.swing.JButton();
         btnEditarControl = new javax.swing.JButton();
         btnListarControles = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(756, 494));
+        setSize(new java.awt.Dimension(756, 494));
+
+        jPanel1.setBackground(new java.awt.Color(189, 221, 211));
+        jPanel1.setForeground(new java.awt.Color(153, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(750, 482));
+        jPanel1.setPreferredSize(new java.awt.Dimension(750, 482));
 
         imgHacker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hacker50menos.png"))); // NOI18N
 
+        btnAgregarActivo.setBackground(new java.awt.Color(94, 94, 94));
+        btnAgregarActivo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnAgregarActivo.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarActivo.setText("Agregar Activo");
         btnAgregarActivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +66,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnEditarActivo.setBackground(new java.awt.Color(94, 94, 94));
+        btnEditarActivo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnEditarActivo.setForeground(new java.awt.Color(255, 255, 255));
         btnEditarActivo.setText("Editar Activo");
         btnEditarActivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +76,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnListarActivo.setBackground(new java.awt.Color(94, 94, 94));
+        btnListarActivo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnListarActivo.setForeground(new java.awt.Color(255, 255, 255));
         btnListarActivo.setText("Listar Activos");
         btnListarActivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +92,9 @@ public class Inicio extends javax.swing.JFrame {
 
         imgIconListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/listar.png"))); // NOI18N
 
+        btnAgregarRiesgo.setBackground(new java.awt.Color(94, 94, 94));
+        btnAgregarRiesgo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnAgregarRiesgo.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarRiesgo.setText("Agregar Riesgo");
         btnAgregarRiesgo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +102,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnEditarRiesgo.setBackground(new java.awt.Color(94, 94, 94));
+        btnEditarRiesgo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnEditarRiesgo.setForeground(new java.awt.Color(255, 255, 255));
         btnEditarRiesgo.setText("Editar Riesgo");
         btnEditarRiesgo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +112,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnListarRiesgos.setBackground(new java.awt.Color(94, 94, 94));
+        btnListarRiesgos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnListarRiesgos.setForeground(new java.awt.Color(255, 255, 255));
         btnListarRiesgos.setText("Listar Riesgos");
         btnListarRiesgos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +122,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnAgregarControl.setBackground(new java.awt.Color(94, 94, 94));
+        btnAgregarControl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnAgregarControl.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarControl.setText("Agregar Control");
         btnAgregarControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +132,9 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnEditarControl.setBackground(new java.awt.Color(94, 94, 94));
+        btnEditarControl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnEditarControl.setForeground(new java.awt.Color(255, 255, 255));
         btnEditarControl.setText("Editar Control");
         btnEditarControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,12 +142,18 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnListarControles.setBackground(new java.awt.Color(94, 94, 94));
+        btnListarControles.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnListarControles.setForeground(new java.awt.Color(255, 255, 255));
         btnListarControles.setText("Listar Controles");
         btnListarControles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListarControlesActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Eras Bold ITC", 1, 36)); // NOI18N
+        jLabel1.setText("Aplicativo De Gestión De Activos");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -142,20 +180,25 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(btnEditarRiesgo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnListarRiesgos, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addGap(130, 130, 130)
+                        .addComponent(btnAgregarControl)
+                        .addGap(27, 27, 27)
                         .addComponent(btnEditarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(btnAgregarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnListarControles, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addGap(32, 32, 32)
+                        .addComponent(btnListarControles))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel1)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
+                        .addGap(47, 47, 47)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAgregarActivo)
                             .addComponent(imgIconMas))
@@ -168,21 +211,21 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(imgIconListar, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnListarActivo)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
+                        .addGap(29, 29, 29)
                         .addComponent(imgHacker, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
+                        .addGap(45, 45, 45)
                         .addComponent(btnAgregarRiesgo)
                         .addGap(54, 54, 54)
                         .addComponent(btnEditarRiesgo)
                         .addGap(50, 50, 50)
                         .addComponent(btnListarRiesgos)))
-                .addGap(59, 59, 59)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregarControl)
                     .addComponent(btnEditarControl)
                     .addComponent(btnListarControles))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,9 +233,8 @@ public class Inicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,6 +359,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel imgIconEditar;
     private javax.swing.JLabel imgIconListar;
     private javax.swing.JLabel imgIconMas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

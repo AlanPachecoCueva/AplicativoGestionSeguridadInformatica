@@ -132,6 +132,7 @@ public class EditarControl extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         txtNombre = new javax.swing.JTextField();
         labelText = new javax.swing.JLabel();
@@ -162,33 +163,52 @@ public class EditarControl extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(848, 533));
         setSize(new java.awt.Dimension(848, 533));
 
+        jPanel1.setBackground(new java.awt.Color(189, 221, 211));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/atras.png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 46, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 112, 250, -1));
 
         labelText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText.setText("Nombre:");
+        jPanel1.add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 114, -1, -1));
 
         labelText1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText1.setText("Descripción:");
+        jPanel1.add(labelText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 156, -1, -1));
+        jPanel1.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 154, 250, -1));
+
+        jPanel1.add(comboTipoControl, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 196, 250, -1));
 
         labelTag1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag1.setText("Tipo De Control:");
+        jPanel1.add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 196, -1, -1));
 
         labelTag2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag2.setText("Eficacia:");
+        jPanel1.add(labelTag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 240, -1, -1));
+        jPanel1.add(spinnerEficacia, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 240, 246, -1));
 
         labelTitulo1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo1.setText("Editar Control");
+        jPanel1.add(labelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 51, -1, -1));
 
         labelTag3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag3.setText("Riesgos:");
+        jPanel1.add(labelTag3, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 284, -1, -1));
+
+        txtRiesgos.setEditable(false);
+        jPanel1.add(txtRiesgos, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 284, 250, -1));
 
         labelTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo.setText("Existentes");
+        jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(702, 51, -1, 24));
 
         tablaControlesExistentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -205,12 +225,15 @@ public class EditarControl extends javax.swing.JFrame {
         tablaControlesExistentes.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane1.setViewportView(tablaControlesExistentes);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 109, 300, 273));
+
         btnSeleccionar.setText("Seleccionar");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 400, 100, 30));
 
         tablaRiesgos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -227,8 +250,11 @@ public class EditarControl extends javax.swing.JFrame {
         tablaRiesgos.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane2.setViewportView(tablaRiesgos);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 388, 271, 162));
+
         labelTitulo2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo2.setText("Riesgos");
+        jPanel1.add(labelTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 344, -1, -1));
 
         btnAgregarRiesgo.setText("AGREGAR");
         btnAgregarRiesgo.addActionListener(new java.awt.event.ActionListener() {
@@ -236,9 +262,11 @@ public class EditarControl extends javax.swing.JFrame {
                 btnAgregarRiesgoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnAgregarRiesgo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 565, -1, -1));
 
         labelTitulo3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo3.setText("Nuevos Riesgos");
+        jPanel1.add(labelTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 350, -1, -1));
 
         tablaRiesgosSeleccionados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -255,12 +283,15 @@ public class EditarControl extends javax.swing.JFrame {
         tablaRiesgosSeleccionados.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane3.setViewportView(tablaRiesgosSeleccionados);
 
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 388, 271, 162));
+
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(659, 557, 100, 40));
 
         btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -268,136 +299,17 @@ public class EditarControl extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(809, 557, 100, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(95, 95, 95)
-                                .addComponent(labelTitulo2))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelTitulo3)
-                                .addGap(70, 70, 70)))
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelText1)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelText)
-                                        .addGap(37, 37, 37)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(labelTitulo1)
-                                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(labelTag1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(labelTag2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(labelTag3, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(37, 37, 37)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(comboTipoControl, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(spinnerEficacia, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtRiesgos, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(85, 85, 85)
-                                .addComponent(labelTitulo))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(btnAgregarRiesgo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRegresar)
-                                .addGap(58, 58, 58))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelTitulo1)
-                                .addGap(29, 29, 29)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(labelText))
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(labelText1))
-                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag1)
-                            .addComponent(comboTipoControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag2)
-                            .addComponent(spinnerEficacia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTag3)
-                            .addComponent(txtRiesgos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTitulo3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTitulo2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAgregarRiesgo)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 23, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -522,29 +434,48 @@ public class EditarControl extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         
-        controlEditado.setNombre(this.txtNombre.getText());
-        controlEditado.setDescripcion(this.txtDescripcion.getText());
-        controlEditado.setTipoControl(TipoControl.valueOf(this.comboTipoControl.getSelectedItem().toString()));
-        controlEditado.setEficaciaEsperada(Integer.parseInt(this.spinnerEficacia.getValue().toString()));
-            
-        controlEditado.setRiesgos(riesgosGuardados);
-        
-        //Si fue guardado correctamente
-        if(controlEditado.getNombre().compareTo(this.txtNombre.getText()) == 0){
-            //Si se guardó correctamente
-            String mensaje = "Control editado correctamente: Nombre:"+controlEditado.getNombre()+" Tipo: "+controlEditado.getTipoControl().toString();
+        //Si el nombre está vacío
+        if(!txtNombre.getText().isEmpty() && !txtDescripcion.getText().isEmpty() && !txtNombre.getText().isBlank() && !txtDescripcion.getText().isBlank()){
+            //Si el nivel de eficacia no está en el rango de 0-10
+            if(Float.parseFloat(spinnerEficacia.getValue().toString()) >= 0 && Float.parseFloat(spinnerEficacia.getValue().toString()) <= 10 ){
+                controlEditado.setNombre(this.txtNombre.getText());
+                controlEditado.setDescripcion(this.txtDescripcion.getText());
+                controlEditado.setTipoControl(TipoControl.valueOf(this.comboTipoControl.getSelectedItem().toString()));
+                controlEditado.setEficaciaEsperada(Integer.parseInt(this.spinnerEficacia.getValue().toString()));
 
-            JOptionPane.showMessageDialog(null, mensaje);
-            
-            //Cerrar ventana
-            Inicio inicio = new Inicio();
+                //Si no hay nuevos riesgos seleccionados
+                if(riesgosGuardados.isEmpty()){
+                    for(Riesgo riesgo : controlEditado.getRiesgos()){
+                        riesgosGuardados.add(riesgo);
+                    }
+                }
+                controlEditado.setRiesgos(riesgosGuardados);
 
-            inicio.setVisible(true);
-            this.dispose();
+                //Si fue guardado correctamente
+                if(controlEditado.getNombre().compareTo(this.txtNombre.getText()) == 0){
+                    //Si se guardó correctamente
+                    String mensaje = "Control editado correctamente: Nombre:"+controlEditado.getNombre()+" Tipo: "+controlEditado.getTipoControl().toString();
+
+                    JOptionPane.showMessageDialog(null, mensaje);
+
+                    //Cerrar ventana
+                    Inicio inicio = new Inicio();
+
+                    inicio.setVisible(true);
+                    this.dispose();
+
+                }else{
+                    JOptionPane.showMessageDialog(null, "El control no se pudo editar correctamente.");
+                }
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "El nivel de eficacia debe estar entre 0 y 10.");
+            }
             
         }else{
-            JOptionPane.showMessageDialog(null, "El control no se pudo editar correctamente.");
+            JOptionPane.showMessageDialog(null, "Debes ingresar un nombre y una descripción de riesgo.");
         }
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
@@ -589,6 +520,7 @@ public class EditarControl extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSeleccionar;
     private javax.swing.JComboBox<String> comboTipoControl;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

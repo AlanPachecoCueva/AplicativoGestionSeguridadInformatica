@@ -24,6 +24,10 @@ public class Editar extends javax.swing.JFrame {
     public Editar() {
         initComponents();
         
+        actualizarTablas();
+    }
+    
+    private void actualizarTablas(){
         DefaultTableModel modeloTabla = new DefaultTableModel();
         
         ArrayList<Object> columnasModel = new ArrayList<Object>();
@@ -84,9 +88,7 @@ public class Editar extends javax.swing.JFrame {
         
         //Confidencialidad
         this.comboConfidencialidad.setModel(new DefaultComboBoxModel(ValoracionCorta.values()));
-        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,6 +98,7 @@ public class Editar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
         labelText = new javax.swing.JLabel();
@@ -119,10 +122,14 @@ public class Editar extends javax.swing.JFrame {
         btnSeleccionar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 255, 255));
         setPreferredSize(new java.awt.Dimension(921, 565));
         setResizable(false);
         setSize(new java.awt.Dimension(921, 565));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(189, 221, 211));
+        jPanel1.setForeground(new java.awt.Color(189, 221, 211));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/atras.png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -130,20 +137,20 @@ public class Editar extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 46, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 46, -1));
 
         labelTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo.setText("Existentes");
-        getContentPane().add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, 24));
+        jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, 24));
 
         labelText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelText.setText("Nombre:");
-        getContentPane().add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 250, -1));
+        jPanel1.add(labelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 250, -1));
 
         labelDisponibilidad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelDisponibilidad.setText("Disponibilidad:");
-        getContentPane().add(labelDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+        jPanel1.add(labelDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         comboDisponibilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboDisponibilidad.addActionListener(new java.awt.event.ActionListener() {
@@ -151,41 +158,41 @@ public class Editar extends javax.swing.JFrame {
                 comboDisponibilidadActionPerformed(evt);
             }
         });
-        getContentPane().add(comboDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 246, -1));
+        jPanel1.add(comboDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 246, -1));
 
         labelTag.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag.setText("Tag:");
-        getContentPane().add(labelTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        jPanel1.add(labelTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
         comboTagType.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboTagTypeItemStateChanged(evt);
             }
         });
-        getContentPane().add(comboTagType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 246, -1));
+        jPanel1.add(comboTagType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 246, -1));
 
         labelIntegridad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelIntegridad.setText("Integridad:");
-        getContentPane().add(labelIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+        jPanel1.add(labelIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
 
         comboIntegridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(comboIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 246, -1));
+        jPanel1.add(comboIntegridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 246, -1));
 
         labelConfidencialidad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelConfidencialidad.setText("Confidencialidad:");
-        getContentPane().add(labelConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, -1));
+        jPanel1.add(labelConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, -1));
 
         comboConfidencialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(comboConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 246, -1));
+        jPanel1.add(comboConfidencialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 246, -1));
 
         labelTag1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTag1.setText("Tipo:");
-        getContentPane().add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
+        jPanel1.add(labelTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 246, -1));
+        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 246, -1));
 
-        getContentPane().add(comboTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 246, -1));
+        jPanel1.add(comboTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 246, -1));
 
         btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +200,7 @@ public class Editar extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 100, 40));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 100, 40));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -201,11 +208,11 @@ public class Editar extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 100, 40));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 100, 40));
 
         labelTitulo1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelTitulo1.setText("Editar Activo");
-        getContentPane().add(labelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, 24));
+        jPanel1.add(labelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, 24));
 
         tablaExistentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -222,7 +229,7 @@ public class Editar extends javax.swing.JFrame {
         tablaExistentes.setPreferredSize(new java.awt.Dimension(921, 565));
         jScrollPane1.setViewportView(tablaExistentes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 300, 350));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 300, 350));
 
         btnSeleccionar.setText("Seleccionar");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
@@ -230,7 +237,18 @@ public class Editar extends javax.swing.JFrame {
                 btnSeleccionarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 100, 30));
+        jPanel1.add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 100, 30));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -245,48 +263,62 @@ public class Editar extends javax.swing.JFrame {
     }//GEN-LAST:event_comboTagTypeItemStateChanged
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
-        //nombreActivo
-        String nombre = this.txtNombre.getText();
-        
-        //TipoDeactivo
-        TipoDeActivo tipoAct = (TipoDeActivo)this.comboTipo.getSelectedItem();
-        
-        String selectedTag = comboTag.getSelectedItem().toString();
-        
-        Tag tagActivo = new Tag();
-        
-        //TagActivo
-        System.out.println("ComboTagType: "+comboTagType.getSelectedItem().toString());
-        System.out.println("SelectedTag: selectedTag");
-        tagActivo.setTag(comboTagType.getSelectedItem().toString(), selectedTag);
-        
-        ValoracionLarga disponibilidad = (ValoracionLarga) comboDisponibilidad.getSelectedItem();
-        
-        //Integridad
-        ValoracionIntegtridad integridad = (ValoracionIntegtridad) comboIntegridad.getSelectedItem();
-        
-        //Confidencialidad
-        ValoracionCorta confidencialidad = (ValoracionCorta) comboConfidencialidad.getSelectedItem();
-        
-        //Se modifica el nuevo activo
-        Activo activo = GuardadoDatos.buscarActivoPorCodigo(codigo);
+        if(!txtNombre.getText().isEmpty()){
+            //nombreActivo
+            String nombre = this.txtNombre.getText();
+
+            //TipoDeactivo
+            TipoDeActivo tipoAct = (TipoDeActivo)this.comboTipo.getSelectedItem();
+
+            String selectedTag = comboTag.getSelectedItem().toString();
+
+            Tag tagActivo = new Tag();
+
+            //TagActivo
+            System.out.println("ComboTagType: "+comboTagType.getSelectedItem().toString());
+            System.out.println("SelectedTag: selectedTag");
+            tagActivo.setTag(comboTagType.getSelectedItem().toString(), selectedTag);
+
+            ValoracionLarga disponibilidad = (ValoracionLarga) comboDisponibilidad.getSelectedItem();
+
+            //Integridad
+            ValoracionIntegtridad integridad = (ValoracionIntegtridad) comboIntegridad.getSelectedItem();
+
+            //Confidencialidad
+            ValoracionCorta confidencialidad = (ValoracionCorta) comboConfidencialidad.getSelectedItem();
+            
+            if(codigo != null){
                 
-        
-        //if(activo.modificarActivo(nombre, tipoAct, tagActivo, disponibilidad, integridad, confidencialidad)){
-        if(activo.modificarActivo(nombre, tipoAct, tagActivo, disponibilidad, integridad, confidencialidad)){
-            String mensaje = "Modificado Correctamente: Nombre:"+activo.getNombreActivo()+" Código: "+activo.getCodigoActivo();
-            JOptionPane.showMessageDialog(null, mensaje);
+                //Se modifica el nuevo activo
+                Activo activo = GuardadoDatos.buscarActivoPorCodigo(codigo);
+                //Comprobamos que se haya seleccionado un activo o que no exista
+                if(activo != null){
+                    //if(activo.modificarActivo(nombre, tipoAct, tagActivo, disponibilidad, integridad, confidencialidad)){
+                    if(activo.modificarActivo(nombre, tipoAct, tagActivo, disponibilidad, integridad, confidencialidad)){
+                        String mensaje = "Modificado Correctamente: Nombre:"+activo.getNombreActivo()+" Código: "+activo.getCodigoActivo();
+                        JOptionPane.showMessageDialog(null, mensaje);
+                        actualizarTablas();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No se modificó el activo correctamente");
+                    }
+
+
+                    //Cerrar ventana
+                    Inicio inicio = new Inicio();
+
+                    inicio.setVisible(true);
+                    this.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "ERROR: El activo seleccionado no se encuentra.");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Debes seleccionar un activo de la lista de existentes.");
+            }
+            
+            
         }else{
-            JOptionPane.showMessageDialog(null, "No se modificó el activo correctamente");
+            JOptionPane.showMessageDialog(null, "Debes ingresar un nombre de activo.");
         }
-        
-        
-        //Cerrar ventana
-        Inicio inicio = new Inicio();
-        
-        inicio.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -431,6 +463,7 @@ public class Editar extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboTag;
     private javax.swing.JComboBox<String> comboTagType;
     private javax.swing.JComboBox<String> comboTipo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelConfidencialidad;
     private javax.swing.JLabel labelDisponibilidad;
